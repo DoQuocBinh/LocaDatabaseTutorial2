@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocaDatabaseTutorial2.MainPage">
+
+    <StackLayout Margin="20,35,20,20">
+        <Entry x:Name="nameEntry" Placeholder="Enter your Name"></Entry>
+        <Entry x:Name="ageEntry" Placeholder="Enter your Age"></Entry>
+        <Button Text="Add To Database" BackgroundColor="Green" CornerRadius="10" Clicked="Button_Clicked"></Button>
+        
+        <CollectionView x:Name="collectionView" SelectionMode="Single" SelectionChanged="collectionView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding ID}"
+                               FontSize="Medium" />
+                        <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                        <Label Text="{Binding Age}" HorizontalOptions="CenterAndExpand"
+                               TextColor="Orange"
+                               FontSize="Medium" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Button Text="Delete" CornerRadius="10" TextColor="Red" Clicked="Button_Clicked_1"></Button>
+    </StackLayout>
+
+</ContentPage>
